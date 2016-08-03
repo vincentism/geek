@@ -1,0 +1,142 @@
+<ion-view view-title="创建新项目">
+  <style>
+    .create-list{
+        padding: 1em 10%;
+        box-sizing: border-box;
+    }
+    @media screen and (max-width: 414px){
+        .create-list{
+            padding: 1em 10px;
+        }
+    }
+    .logo{
+        line-height: 30px;
+    }
+    .logo img{
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        vertical-align: bottom;
+    }
+    .create-pic{
+        display: block;
+    }
+    .addition{
+        font-size: 0.8em;
+    }
+    .add-pic{
+        width: 200px;
+        display: block;
+    }
+    .url-label{
+        display: inline-block;
+        width: 15%;
+        vertical-align: top;
+        margin-top: 1em;
+    }
+    .url-input{
+        width: 80%;
+        margin: 1em 0 0 1em;
+    }
+    .create-save-btn{
+        min-width: 100px;
+    }
+    .create-skip-btn{
+        min-width: 100px;
+        border: 1px solid #f0f0f0;
+    }
+    @media screen and (max-width: 414px){
+        .create-save-btn,.create-skip-btn{
+            width: 100%;
+            display: block;
+            margin: 1em 0 0 0;
+        }
+    }
+  </style>
+  <ion-content>
+      <div class="list create-list">
+        <label class="item item-input">
+          <span class="input-label logo"><img src="img/ionic.png">产品名称</span>
+          <input type="text" placeholder="产品名称">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Slogan</span>
+          <input type="text" placeholder="一句话介绍">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">问题痛点</span>
+          <textarea placeholder=""></textarea>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">解决方案</span>
+          <textarea placeholder=""></textarea>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">关键指标</span>
+          <textarea placeholder=""></textarea>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">独特卖点</span>
+          <textarea placeholder=""></textarea>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">竞争优势</span>
+          <textarea placeholder=""></textarea>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">客户细分</span>
+          <textarea placeholder=""></textarea>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">渠道</span>
+          <textarea placeholder=""></textarea>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">成本结构</span>
+          <textarea placeholder=""></textarea>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">收入</span>
+          <textarea placeholder=""></textarea>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">标签</span>
+          <textarea placeholder=""></textarea>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">竞品</span>
+          <textarea placeholder=""></textarea>
+        </label>
+        <div class="item item-input-inset">
+          <label class="item-input-wrapper">
+            <span class="input-label">产品介绍</span>
+            <input type="text" placeholder="">
+          </label>
+          <button class="button button-positive button-small">
+            创建精益画布
+          </button>
+        </div>
+        <div class="item">
+            <div class="creat-pic">图片介绍<span class="addition">（最多可以上传5张，仅支持JPG, GIF, PNG格式，文件小于5M，建议尺寸700*400px）</span></div>
+            <img class="add-pic" src="../img/add-pic.png">
+        </div>
+        <div class="item">
+            <div class="">视频介绍<span class="addition">（建议适用腾讯视频、乐视TV地址）</span></div>
+            <input type="text" placeholder="">
+        </div>
+        <div class="item">
+            <div class="">其他<span class="addition">（个性才华，一一展现）</span><a class="addition" href="javascript:void(0)">实例介绍</a></div>
+            <input type="text" placeholder="其他更有个性的有趣的创业过程想分享">
+        </div>
+        <div class="item">
+            <div class="">相关链接<span class="addition">（填写主要产品的相关链接，方便浏览者了解产品）</span></div>
+            <label class="url-label">Web官网</label><input class="url-input" placeholder="如：http://www.36kr.com"><br>
+            <label class="url-label">iPhone下载链接</label><input class="url-input" placeholder="如：https://itunes.apple.com/cn/app/36ke/id39804304"><br>
+            <label class="url-label">Android下载链接</label><input class="url-input" placeholder="如：http://www.36kr.com"><br>
+            <label class="url-label">下载二维码</label><img class="add-pic" src="../img/add-pic.png">
+            <button class="button button-positive create-save-btn">保存</button>
+            <button class="button create-skip-btn">跳过</button>
+        </div>
+      </div>
+  </ion-content>
+</ion-view>

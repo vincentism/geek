@@ -1,0 +1,197 @@
+<ion-view view-title="与你一起实现创业梦想">
+  <style>
+      .content{
+          background: #e6e6e6;
+          padding: 2em;
+      }
+      .left{
+          float: left;
+          width: 66%
+      }
+      .right{
+          float: right;
+          width: 31%;
+      }
+      .back{
+          width: 100%;
+          height: 400px;
+          overflow: hidden;
+          background: url("http://static.ghostchina.com/image/6/d1/fcb3879e14429d75833a461572e64.jpg") fixed no-repeat top;
+          background-size: cover;
+          text-align: center;
+      }
+      .slogan{
+          font-size: 3em;
+          line-height: 1em;
+          color: #fff;
+          padding-top: 3em;
+          box-sizing: border-box;
+      }
+      .subTitle{
+          font-size: 1.3em;
+          line-height: 1.2em;
+          color: #fff;
+          margin-top: 1em;
+      }
+      .startBtn{
+          width: 220px;
+          height: 56px;
+          border: 0;
+          border-radius: 4px;
+          margin-top: 1em;
+      }
+      .card{
+          width: 100%;
+          margin: 2em 0;
+          padding: 1em;
+          box-sizing: border-box;
+          background: #fff;
+      }
+      .cardSmall{
+          width: 100%;
+          margin: 2em 0 0 0;
+          padding: 1em;
+          box-sizing: border-box;
+          background: #fff;
+      }
+      .slide{
+          width: 100%;
+          height: 350px;
+      }
+      .slide .slideImg{
+          width: 100%;
+          height: 100%;
+      }
+      .lists p{
+          font-size: 2.5em;
+          line-height: 1em;
+          margin-top: 1em;
+      }
+      .lists ul li{
+          font-size: 1.2em;
+          line-height: 1.4em;
+          color: #444443;
+      }
+      .mobile-buttons,.mobile-start-btn{
+          display: none;
+      }
+      @media screen and (max-width: 768px){
+          .left{
+              width: 100%;
+          }
+          .right,.back{
+              display: none;
+          }
+          .content{
+              padding: 0;
+          }
+          .card0{
+              margin-top: 0;
+          }
+          .slide{
+              height: 250px;
+          }
+          .mobile-buttons{
+              display: block;
+          }
+          .mobile-start-btn{
+              display: block;
+              width: 100%;
+              margin: 0!important;
+          }
+      }
+      @media screen and (max-width: 320px){
+          .slide{
+              height: 200px;
+          }
+      }
+  </style>
+  <ion-content>
+    <div class="content">
+      <div class="back">
+        <p class="slogan">精益创业，让你乘风破浪</p>
+        <p class="subTitle">创业艰难，种种困难环绕。精益创业视创业为一种管理，让你在乘风破浪时提供思路，减轻负担。</p>
+        <div class="buttons padding">
+          <button ng-click="login()" type="button" class="button button-positive startBtn">感觉不错，马上开始试用</button>
+        </div>
+      </div>
+
+      <div class="left">
+        <div class="buttons padding mobile-buttons">
+          <button ng-click="login()" type="button" class="button button-positive mobile-start-btn button-block">马上开始试用</button>
+        </div>
+        <div class="card card0">
+          <ion-slides  class="slide" options="options" slider="data.slider">
+            <ion-slide-page>
+              <div class="box slide">
+                <img class="slideImg" src="img/slide1.jpg">
+              </div>
+            </ion-slide-page>
+            <ion-slide-page>
+              <div class="box slide">
+                <img class="slideImg" src="img/slide2.jpg">
+              </div>
+            </ion-slide-page>
+          </ion-slides>
+          <div class="lists padding">
+            <p>创云帮你：</p>
+            <ul>
+              <li>简单有力的描述你的商业计划，把重点放在最重要的事情上；寻找专家和顾问帮你优化你的方案，甚至帮你寻找投资</li>
+              <li>帮你寻找最适合你的合伙人</li>
+              <li>帮你用有用的工具描述你的点子、需求</li>
+              <li>提供开发你的产品所需的各种工具：协同、沟通、计划、分享、演示、测试、集成</li>
+              <li>提供运行和运营产品的最有环境：云、各种服务和各种基于精益分析运营工具</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <ion-slides  class="slide" options="options" slider="data.slider">
+            <ion-slide-page>
+              <div class="box slide">
+                <img class="slideImg" src="img/feature1.jpg">
+              </div>
+            </ion-slide-page>
+            <ion-slide-page>
+              <div class="box slide">
+                <img class="slideImg" src="img/feature2.jpg">
+              </div>
+            </ion-slide-page>
+            <ion-slide-page>
+              <div class="box slide">
+                <img class="slideImg" src="img/feature3.jpg">
+              </div>
+            </ion-slide-page>
+            <ion-slide-page>
+              <div class="box slide">
+                <img class="slideImg" src="img/feature4.jpg">
+              </div>
+            </ion-slide-page>
+          </ion-slides>
+          <div class="lists padding">
+            <ul>
+              <li>从今天起</li>
+              <li>关注在最重要的事情上</li>
+              <li>了解市场、了解客户</li>
+              <li>减少浪费</li>
+              <li>快速开发</li>
+              <li>数据驱动</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <img class="full" src="img/key.jpg">
+        </div>
+      </div>
+    <div class="right">
+        <div class="cardSmall">
+            下载Geek
+            <button class="button button-block button-positive">Geek中文版（1.0.0）</button>
+        </div>
+        <div class="cardSmall">
+            other cards
+        </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  </ion-content>
+</ion-view>
