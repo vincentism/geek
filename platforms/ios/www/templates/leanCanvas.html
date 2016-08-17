@@ -3,20 +3,74 @@ a {
   color: #00B7FF;
   position: relative;
 }
-.wrapper, .projectTitle{
+.lean-wrapper, .projectTitle{
   width: 80%;
   margin: 0 auto;
   text-align: center;
   margin-top: 1em;
 }
-.projectTitle h1{
-    color: #fff;
+.lean-wrapper{
+    overflow-x: scroll;
+}
+.lean-item{
+    padding: 1em 10%;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 414px){
+    .lean-item{
+        padding: 1em 10px;
+        box-sizing: border-box;
+    }
+}
+.product-logo{
+    width: 40px;
+}
+.lean-title{
+    display: inline-block;
+    vertical-align: top;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 0 0 1em;
+}
+.lean-slogan{
+    display: inline-block;
+    vertical-align: top;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 0 0 2em;
+}
+.lean-tag, .lean-comp{
+    display: inline-block;
+    float: right;
+}
+.lean-des{
+    display: inline-block;
+    vertical-align: top;
+    height: 40px;
+    line-height: 40px;
+    margin: 1em 0;
+}
+.lean-pic{
+    display: inline-block;
+    margin: 0 0 1em 0;
+}
+.pic-des{
+    width: 200px;
+    margin: 1em 1em 1em 0;
+}
+@media screen and (max-width: 414px){
+    .pic-des{
+        width: 100%;
+        display: block;
+        margin: 1em auto;
+    }
+    .lean-tag,.lean-comp{
+        display: none;
+    }
 }
 @media screen and (max-width:800px) {
-    .wrapper{
-        width: 100%;
-    }
-    .projectTitle{
+    .lean-wrapper{
         width: 100%;
     }
 }
@@ -52,7 +106,10 @@ a {
   overflow: hidden;
   min-height: 214px;
 }
-
+table.table{
+    width: 100%;
+    min-width: 960px;
+}
 table.table td {
   position: relative;
   border: 1px solid #000;
@@ -88,6 +145,7 @@ table.table td:hover {
     font-size: 12px;
     color: #CCC;
     padding-left: 5px;
+    box-sizing: border-box;
 }
 
 .item-list {
@@ -170,16 +228,28 @@ table.table td:hover .show-feed {
 </style>
 <ion-view view-title="创建新项目">
   <ion-content>
-    <div class="list projectTitle bgPositive">
-      <!-- <label class="item item-input item-stacked-label">
-        <span class="input-label">项目名称</span>
-        <input type="text" placeholder="名称">
-      </label> -->
-      <!-- <div class="item "> -->
-        <h1>产品精益商业看板</h1>
-      <!-- </div> -->
+    <div class="list">
+        <div class="item lean-item">
+            <img class="product-logo" src="../img/ionic.png">
+            <span class="lean-title">易道云</span>
+            <span class="lean-slogan">slogan</span>
+            <span class="lean-tag">产品标签</span>
+        </div>
+        <div class="item lean-item">
+            <span class="lean-des">产品描述</span>
+            <span class=""></span>
+        </div>
+        <div class="item lean-item">
+            <span class="lean-pic">图片或视频介绍</span>
+            <div class="clear"></div>
+            <img class="pic-des" src="../img/banner.png">
+            <img class="pic-des" src="../img/banner.png">
+            <img class="pic-des" src="../img/banner.png">
+            <img class="pic-des" src="../img/banner.png">
+            <span class="lean-comp">竞争对手</span>
+        </div>
     </div>
-    <div class="wrapper padding">
+    <div class="lean-wrapper padding">
       <table class="table table-bordered">
           <tbody>
               <tr>
@@ -188,27 +258,15 @@ table.table td:hover .show-feed {
                           <div class="show-title-wrap">
                               <div class="show-title-inner clearfix">
                                   <div class="left">
-                                      <div class="show-title">问题</div>
+                                      <div class="show-title">问题痛点</div>
                                   </div>
                                   <div class="right help-wrap">
                                       <a href="javascript:{}" class="help"></a>
                                   </div>
                               </div>
-                              <div class="show-title-info">列出你的最高1-3个问题</div>
+                              <div class="show-title-info">问题痛点1</div>
                           </div>
                           <div class="show-default">2</div>
-                          <ul class="item-list unstyled"></ul>
-                      </div>
-                      <div class="show-grid">
-                          <div class="show-title-wrap">
-                              <div class="show-title-inner clearfix">
-                                  <div class="left">
-                                      <div class="show-title">现有的替代品</div>
-                                  </div>
-                              </div>
-                              <div class="show-title-info">这些问题是如何解决今天的名单</div>
-                          </div>
-                          <div class="show-default">&nbsp;</div>
                           <ul class="item-list unstyled"></ul>
                       </div>
                       <a class="show-feed" href="javascript:{}">发表评论</a>
@@ -217,7 +275,7 @@ table.table td:hover .show-feed {
                       <div class="show-title-wrap">
                           <div class="show-title-inner clearfix">
                               <div class="left">
-                                  <div class="show-title">解</div>
+                                  <div class="show-title">解决方案</div>
                               </div>
                               <div class="right help-wrap">
                                   <a href="javascript:{}" class="help"></a>
@@ -234,7 +292,7 @@ table.table td:hover .show-feed {
                           <div class="show-title-wrap">
                               <div class="show-title-inner clearfix">
                                   <div class="left">
-                                      <div class="show-title">独特的价值主张</div>
+                                      <div class="show-title">独特卖点</div>
                                   </div>
                                   <div class="right help-wrap">
                                       <a href="javascript:{}" class="help"></a>
@@ -245,25 +303,13 @@ table.table td:hover .show-feed {
                           <div class="show-default">3</div>
                           <ul class="item-list unstyled"></ul>
                       </div>
-                      <div class="show-grid">
-                          <div class="show-title-wrap">
-                              <div class="show-title-inner clearfix">
-                                  <div class="left">
-                                      <div class="show-title">高层次的概念</div>
-                                  </div>
-                              </div>
-                              <div class="show-title-info">列出你的X，Y类比（例如YouTube，Flickr视频）</div>
-                          </div>
-                          <div class="show-default">&nbsp;</div>
-                          <ul class="item-list unstyled"></ul>
-                      </div>
                       <a class="show-feed" href="javascript:{}">发表评论</a>
                   </td>
                   <td class="show-grid" style="width:20%;">
                       <div class="show-title-wrap">
                           <div class="show-title-inner clearfix">
                               <div class="left">
-                                  <div class="show-title">不公平的优势</div>
+                                  <div class="show-title">门槛</div>
                               </div>
                               <div class="right help-wrap">
                                   <a href="javascript:{}" class="help"></a>
@@ -291,23 +337,11 @@ table.table td:hover .show-feed {
                           <div class="show-default">1</div>
                           <ul class="item-list unstyled"></ul>
                       </div>
-                      <div class="show-grid">
-                          <div class="show-title-wrap">
-                              <div class="show-title-inner clearfix">
-                                  <div class="left">
-                                      <div class="show-title">早期的采用者</div>
-                                  </div>
-                              </div>
-                              <div class="show-title-info">列出你的理想客户特征</div>
-                          </div>
-                          <div class="show-default">&nbsp;</div>
-                          <ul class="item-list unstyled"></ul>
-                      </div>
                       <a class="show-feed" href="javascript:{}">发表评论</a>
                   </td>
               </tr>
               <tr>
-                  <td class="show-grid">
+                  <td class="show-grid" style="width:20%;">
                       <div class="show-title-wrap">
                           <div class="show-title-inner clearfix">
                               <div class="left">
@@ -317,17 +351,17 @@ table.table td:hover .show-feed {
                                   <a href="javascript:{}" class="help"></a>
                               </div>
                           </div>
-                          <div class="show-title-info">告诉您，您的企业如何做，列出关键数字</div>
+                          <div class="show-title-info">列出关键数字</div>
                       </div>
                       <div class="show-default">8</div>
                       <ul class="item-list unstyled"></ul>
                       <a class="show-feed" href="javascript:{}">发表评论</a>
                   </td>
-                  <td class="show-grid">
+                  <td class="show-grid" style="width:20%;">
                       <div class="show-title-wrap">
                           <div class="show-title-inner clearfix">
                               <div class="left">
-                                  <div class="show-title">通道</div>
+                                  <div class="show-title">渠道</div>
                               </div>
                               <div class="right help-wrap">
                                   <a href="javascript:{}" class="help"></a>
@@ -378,16 +412,10 @@ table.table td:hover .show-feed {
       </table>
     </div>
   </ion-content>
-  <script src="js/jquery.tmpl.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="tools/jquery.tmpl.min.js"></script>
+  <script src="tools/bootstrap.min.js"></script>
   <script>
-  /**
-   * Created with JetBrains WebStorm.
-   * User: apple
-   * Date: 13-2-14
-   * Time: AM10:00
-   * To change this template use File | Settings | File Templates.
-   */
+
   var Index = (function() {
 
     /**
@@ -419,7 +447,7 @@ table.table td:hover .show-feed {
      */
     var inputTmpl = ['<li class="item-wrap">',
       '<div class="input-wrap">',
-      '<div><input type="text" class="input-item" name="input-item" value="jQuery{name}" /></div>',
+      '<div><input type="text" class="input-item" name="input-item" value="${name}" /></div>',
       '<div><input type="button" class="submit" value="保存" /><em>或</em><input type="button" class="cancel" value="取消" /></div>',
       '</div>',
       '</li>'].join('');
@@ -472,7 +500,7 @@ table.table td:hover .show-feed {
      * 通过输入框添加的内容展示模版
      */
     var _showTmpl = ['<li class="show-item"><div class="row-fluid">' +
-      '<div class="span10 text-left show-item-name">jQuery{name}</div>',
+      '<div class="span10 text-left show-item-name">${name}</div>',
       '<div class="span2 show-item-delete"><a class="delete" href="javascript:{}"></a></div>',
     '</div></li>'].join('');
 
@@ -483,6 +511,7 @@ table.table td:hover .show-feed {
       var name = jQuery(itemList).find('.input-item').first().val();
       if(name && name !== '') {
         var itemWrap = jQuery(itemList).find('.item-wrap');
+        console.log(itemWrap);
         if(itemWrap.size() > 0) {
           itemWrap.replaceWith(jQuery(jQuery.tmpl(_showTmpl, {name: name})));
         } else {

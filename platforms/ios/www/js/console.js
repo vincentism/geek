@@ -10,7 +10,6 @@ moduleC.config(function($stateProvider, $urlRouterProvider) {
     }
   })
 });
-moduleC.controller('consoleCtrl', function($scope, hideNavBar){
-    $scope.hideNavBar = hideNavBar;
+moduleC.controller('consoleCtrl', function($scope){
     $scope.testData = 'vincent';
 })

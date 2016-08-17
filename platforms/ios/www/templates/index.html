@@ -1,8 +1,8 @@
-<ion-view view-title="与你一起实现创业梦想">
+<ion-view view-title="与你一起实现创业梦想" hide-nav-bar="{{hideNavBar}}">
   <style>
-      .content{
+      .index-content{
           background: #e6e6e6;
-          padding: 2em;
+          padding: 80px 2em;
       }
       .left{
           float: left;
@@ -11,9 +11,6 @@
       .right{
           float: right;
           width: 31%;
-      }
-      .clear{
-          clear: both;
       }
       .back{
           width: 100%;
@@ -43,9 +40,6 @@
           border-radius: 4px;
           margin-top: 1em;
       }
-      /*.startBtn1{
-          display: none;
-      }*/
       .card{
           width: 100%;
           margin: 2em 0;
@@ -78,17 +72,20 @@
           line-height: 1.4em;
           color: #444443;
       }
+      .mobile-buttons,.mobile-start-btn{
+          display: none;
+      }
       @media screen and (max-width: 768px){
           .left{
               width: 100%;
           }
-          .right{
+          .right,.back{
               display: none;
           }
-          .content{
+          .index-content{
               padding: 0;
           }
-          .back{
+          .index-header{
               display: none;
           }
           .card0{
@@ -96,6 +93,14 @@
           }
           .slide{
               height: 250px;
+          }
+          .mobile-buttons{
+              display: block;
+          }
+          .mobile-start-btn{
+              display: block;
+              width: 100%;
+              margin: 0!important;
           }
       }
       @media screen and (max-width: 320px){
@@ -105,7 +110,7 @@
       }
   </style>
   <ion-content>
-    <div class="content">
+    <div class="index-content">
       <div class="back">
         <p class="slogan">精益创业，让你乘风破浪</p>
         <p class="subTitle">创业艰难，种种困难环绕。精益创业视创业为一种管理，让你在乘风破浪时提供思路，减轻负担。</p>
@@ -115,9 +120,9 @@
       </div>
 
       <div class="left">
-        <!-- <div class="buttons padding">
-          <button ng-click="login()" type="button" class="button button-positive startBtn1">马上开始试用</button>
-        </div> -->
+        <div class="buttons padding mobile-buttons">
+          <button ng-click="login()" type="button" class="button button-positive mobile-start-btn button-block">马上开始试用</button>
+        </div>
         <div class="card card0">
           <ion-slides  class="slide" options="options" slider="data.slider">
             <ion-slide-page>
@@ -140,6 +145,7 @@
               <li>提供开发你的产品所需的各种工具：协同、沟通、计划、分享、演示、测试、集成</li>
               <li>提供运行和运营产品的最有环境：云、各种服务和各种基于精益分析运营工具</li>
             </ul>
+            <div class="index-header" data-ng-include="'html/header.html'"></div>
           </div>
         </div>
         <div class="card">
@@ -192,7 +198,4 @@
     <div class="clear"></div>
   </div>
   </ion-content>
-  <script>
-
-  </script>
 </ion-view>

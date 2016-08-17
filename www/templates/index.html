@@ -1,8 +1,8 @@
-<ion-view view-title="与你一起实现创业梦想">
+<ion-view view-title="与你一起实现创业梦想" hide-nav-bar="{{hideNavBar}}">
   <style>
-      .content{
+      .index-content{
           background: #e6e6e6;
-          padding: 2em;
+          padding: 80px 2em;
       }
       .left{
           float: left;
@@ -82,8 +82,11 @@
           .right,.back{
               display: none;
           }
-          .content{
+          .index-content{
               padding: 0;
+          }
+          .index-header{
+              display: none;
           }
           .card0{
               margin-top: 0;
@@ -107,7 +110,7 @@
       }
   </style>
   <ion-content>
-    <div class="content">
+    <div class="index-content">
       <div class="back">
         <p class="slogan">精益创业，让你乘风破浪</p>
         <p class="subTitle">创业艰难，种种困难环绕。精益创业视创业为一种管理，让你在乘风破浪时提供思路，减轻负担。</p>
@@ -142,6 +145,7 @@
               <li>提供开发你的产品所需的各种工具：协同、沟通、计划、分享、演示、测试、集成</li>
               <li>提供运行和运营产品的最有环境：云、各种服务和各种基于精益分析运营工具</li>
             </ul>
+            <div class="index-header" data-ng-include="'html/header.html'"></div>
           </div>
         </div>
         <div class="card">
