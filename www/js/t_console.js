@@ -4,7 +4,7 @@ moduleC.config(function($stateProvider, $urlRouterProvider) {
     url: '/console',
     views: {
       'menuContent': {
-        templateUrl: 'templates/console.html',
+        templateUrl: 'templates/t_console.html',
         controller: 'consoleCtrl'
       }
     }

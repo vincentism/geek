@@ -4,7 +4,7 @@ moduleC.config(function($stateProvider, $urlRouterProvider) {
       url: '/leancanvas',
       views: {
           'menuContent': {
-              templateUrl: 'templates/leanCanvas.html',
+              templateUrl: 'templates/t_leanCanvas.html',
               controller: 'leanCtrl'
           }
       }

@@ -4,7 +4,7 @@ moduleC.config(function($stateProvider, $urlRouterProvider) {
     url: '/index',
     views: {
       'menuContent': {
-        templateUrl: 'templates/index.html',
+        templateUrl: 'templates/t_index.html',
         controller: 'indexCtrl'
       }
     }

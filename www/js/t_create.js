@@ -4,7 +4,7 @@ moduleC.config(function($stateProvider, $urlRouterProvider) {
       url: '/create',
       views: {
         'menuContent': {
-          templateUrl: 'templates/create.html'
+          templateUrl: 'templates/t_create.html'
         }
       }
     })

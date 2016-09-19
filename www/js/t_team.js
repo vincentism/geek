@@ -4,7 +4,7 @@ moduleC.config(function($stateProvider, $urlRouterProvider) {
     url: '/team',
     views: {
       'menuContent': {
-        templateUrl: 'templates/team.html',
+        templateUrl: 'templates/t_team.html',
         controller: 'teamCtrl'
       }
     }
