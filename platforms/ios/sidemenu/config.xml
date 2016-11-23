@@ -20,6 +20,9 @@
     <feature name="Keyboard">
         <param name="ios-package" onload="true" value="IonicKeyboard" />
     </feature>
+    <feature name="YoikScreenOrientation">
+        <param name="ios-package" value="YoikScreenOrientation" />
+    </feature>
     <name>sidemenu</name>
     <description>
         An Ionic Framework and Cordova project.
@@ -78,4 +81,5 @@
     <preference name="FadeSplashScreenDuration" value="2000" />
     <preference name="android-minSdkVersion" value="16" />
     <preference name="SplashScreen" value="screen" />
+    <preference name="orientation" value="portrait" />
 </widget>

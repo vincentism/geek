@@ -45,6 +45,8 @@
 		CA000A6A58DA4796A75633C7 /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 56825CA0DE9D40B2AE8E575A /* CDVViewController+SplashScreen.m */; };
 		36853709A8E4499FAD93B43C /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F6599E3F764524A5539BD4 /* CDVStatusBar.m */; };
 		EFDAE5095EB34877ABEF140B /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC4C8F844B4BB4E20130 /* IonicKeyboard.m */; };
+		30D55134BF524EEEB46676E1 /* YoikScreenOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB13497D7D324FC99F40294E /* YoikScreenOrientation.m */; };
+		C44EDDAAFFFC472B9F707213 /* CDVViewController+UpdateSupportedOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = 5297694C20314611BC58AF20 /* CDVViewController+UpdateSupportedOrientations.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +124,10 @@
 		9A4E9C5C70354DC5B3E70E54 /* CDVStatusBar.h */ = {isa = PBXFileReference; name = "CDVStatusBar.h"; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		40D6CC4C8F844B4BB4E20130 /* IonicKeyboard.m */ = {isa = PBXFileReference; name = "IonicKeyboard.m"; path = "ionic-plugin-keyboard/IonicKeyboard.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		04508459A4E343D5805F7152 /* IonicKeyboard.h */ = {isa = PBXFileReference; name = "IonicKeyboard.h"; path = "ionic-plugin-keyboard/IonicKeyboard.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		DB13497D7D324FC99F40294E /* YoikScreenOrientation.m */ = {isa = PBXFileReference; name = "YoikScreenOrientation.m"; path = "cordova-plugin-screen-orientation/YoikScreenOrientation.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		5297694C20314611BC58AF20 /* CDVViewController+UpdateSupportedOrientations.m */ = {isa = PBXFileReference; name = "CDVViewController+UpdateSupportedOrientations.m"; path = "cordova-plugin-screen-orientation/CDVViewController+UpdateSupportedOrientations.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		4A121DFF6D484816B3839747 /* YoikScreenOrientation.h */ = {isa = PBXFileReference; name = "YoikScreenOrientation.h"; path = "cordova-plugin-screen-orientation/YoikScreenOrientation.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		95118D62EDD34D1586F649B8 /* CDVViewController+UpdateSupportedOrientations.h */ = {isa = PBXFileReference; name = "CDVViewController+UpdateSupportedOrientations.h"; path = "cordova-plugin-screen-orientation/CDVViewController+UpdateSupportedOrientations.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +238,10 @@
 				9A4E9C5C70354DC5B3E70E54 /* CDVStatusBar.h */,
 				40D6CC4C8F844B4BB4E20130 /* IonicKeyboard.m */,
 				04508459A4E343D5805F7152 /* IonicKeyboard.h */,
+				DB13497D7D324FC99F40294E /* YoikScreenOrientation.m */,
+				5297694C20314611BC58AF20 /* CDVViewController+UpdateSupportedOrientations.m */,
+				4A121DFF6D484816B3839747 /* YoikScreenOrientation.h */,
+				95118D62EDD34D1586F649B8 /* CDVViewController+UpdateSupportedOrientations.h */,
 			);
 			name = Plugins;
 			path = "sidemenu/Plugins";
@@ -422,6 +432,8 @@
 				CA000A6A58DA4796A75633C7 /* CDVViewController+SplashScreen.m in Sources */,
 				36853709A8E4499FAD93B43C /* CDVStatusBar.m in Sources */,
 				EFDAE5095EB34877ABEF140B /* IonicKeyboard.m in Sources */,
+				30D55134BF524EEEB46676E1 /* YoikScreenOrientation.m in Sources */,
+				C44EDDAAFFFC472B9F707213 /* CDVViewController+UpdateSupportedOrientations.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,26 @@
+
+<ion-view>
+    <ion-content>
+        <div class="wrapper">
+            <!-- <label>their url field:</label>
+            <input type="text" ng-model="theirUrl">
+            <div my-directive
+                some-attr = "theirUrl"
+                my-link-text = "whatever"></div> -->
+
+            <div ng-controller="scopeController">
+                outside: {{myProperty}}
+                <div my-directive ng-init="myProperty = 'cool'">
+                    inside: {{myProperty}}
+                </div>
+            </div>
+        </div>
+
+
+    </ion-content>
+</ion-view>
+<style>
+    .wrapper{
+        margin-top: 50px
+    }
+</style>

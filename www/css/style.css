@@ -1,4 +1,6 @@
-/* Empty. Add your own CSS if you like */
+body{
+    background: #f8f8f8;
+}
 .center{
   text-align: center;
 }
@@ -62,4 +64,63 @@
 .row{
     margin-left: 0;
     margin-right: 0;
+}
+
+.header-box{
+    width: 100%;
+    height: 60px;
+    padding: 1em 2em;
+    z-index: 9;
+}
+.header-inner-box{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header-title-eng-version{
+    font-size: 25px;
+    line-height: 30px;
+}
+.header-title{
+    font-size: 25px;
+    line-height: 30px;
+}
+.header-li{
+    font-size: 18px;
+    line-height: 40px;
+    float: left;
+    vertical-align: bottom;
+    margin: 0 1em 0 0;
+}
+.header-account{
+    font-size: 16px;
+}
+.investHouse{
+  margin-left: 2em;
+}
+
+.footer-wrapper{
+    width: 100%;
+    height: 365px;
+    background: #34495e;
+    color: #fff;
+    border-top: 1px solid #eee;
+}
+.inner-footer-wrapper{
+    max-width: 1200px;
+    margin: 2em auto 3em;
+}
+.footer-items{
+    margin-left: 125px;
+    width: 150px;
+    text-align: left;
+}
+.footer-intro{
+    text-align: center;
+    line-height: 1.5em;
+}
+.footer-intro-item{
+    color: #fff;
+}
+.footer-intro-item:hover{
+    color: #fff;
 }

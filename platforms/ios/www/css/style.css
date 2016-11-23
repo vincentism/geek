@@ -30,12 +30,6 @@
     background: #387ef5;
     padding: 10px;
 }
-.item-wrap{
-    /*width: 200px;
-    height: 400px;
-    border: 1px solid #e6e6e6;
-    border-radius: 4px;*/
-}
 .project{
     width: 100%;
     height: 150px;
@@ -63,4 +57,9 @@
 .inviteBox{
     padding-top: 1em;
     box-sizing: border-box;
+}
+/*fix the conflict of ionic.css and bootstrap.css*/
+.row{
+    margin-left: 0;
+    margin-right: 0;
 }

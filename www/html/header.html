@@ -1,57 +1,17 @@
-<!-- <ion-view view-title="我的项目">
-  <ion-content>
-    <div ng-include=""></div>
-    <div class="padding createProject">
-      <a href="#/app/create"  class="button button-block button-positive">新建项目</a>
-      <ul class="list">
-        <a href="#/app/leancanvas"><li class="item project"><img src="img/banner.png"></li></a>
-        <a href="#/app/leancanvas"><li class="item project"><img src="img/banner.png"></li></a>
-        <a href="#/app/leancanvas"><li class="item project"><img src="img/banner.png"></li></a>
-        <a href="#/app/leancanvas"><li class="item project"><img src="img/banner.png"></li></a>
-        <a href="#/app/leancanvas"><li class="item project"><img src="img/banner.png"></li></a>
-        <a href="#/app/leancanvas"><li class="item project"><img src="img/banner.png"></li></a>
-      </ul>
+<header class="header-box" ng-if="showHeader">
+    <div class="header-inner-box">
+        <p class="left inline-block header-title" ui-sref="app.index">易道云</p>
+        <ul class="left inline-block">
+            <li class="header-li investHouse" ui-sref="app.index">创投库</li>
+            <li class="header-li" ui-sref="app.index">易道指数</li>
+            <li class="header-li" ui-sref="app.index">孵化营</li>
+        </ul>
+
+        <ul class="right inline-block">
+            <li class="header-li" ui-sref="app.console">工作台</li>
+            <li class="header-li header-account">{{user}}</li>
+            <li class="header-li header-account" ui-sref="app.register">注册</li>
+            <li class="header-li header-account" ui-sref="app.login">登陆</li>
+        </ul>
     </div>
-  </ion-content>
-</ion-view> -->
-<style>
-.header-header{
-    width: 100%;
-    height: 60px;
-    position: absolute;
-    top:0;
-    left: 0;
-    padding: 0 2em;
-    margin-top: 0.5em;
-}
-.header-logo{
-    height: 100%;
-    margin-right: 1em;
-}
-.header-title{
-    line-height: 60px;
-    vertical-align: top;
-    margin-top:0;
-}
-.header-nav{
-    float: right;
-    height: 60px;
-}
-.header-nav li{
-    float: left;
-    height: 60px;
-    margin: 0 1em 0 0;
-    font-size: 26px !important;
-    line-height: 60px !important;
-    color: #387ef5 !important;
-}
-</style>
-<header class="header-header">
-  <img class="inline-block header-logo" src="img/ionic.png">
-  <h1 class="inline-block header-title">与你一起实现创业梦想</h1>
-  <ul class="header-nav">
-      <li ui-sref="app.console">工作台</li>
-      <li ui-sref="app.team">组队</li>
-      <li>我／注册</li>
-  </ul>
 </header>

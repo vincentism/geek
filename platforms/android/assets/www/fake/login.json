@@ -1,0 +1,17 @@
+{
+    "code": 200,
+    "message": "success",
+    "uuid": "222",
+    "data": {
+        "id": "1",
+        "username": "admin",
+        "name": "时小正",
+        "mobile": "13988888888",
+        "email": "123456@qq.cpom",
+        "code": "100001",
+        "role": "1,2",
+        "userid": "1",
+		"account_role": 0,
+        "power": []
+    }
+}

@@ -1,0 +1,66 @@
+<style>
+.loginCard{
+    width: 500px;
+    height: 600px;
+    margin:  3em auto;
+}
+.form-head{
+    padding: 30px;
+    text-align: center;
+    font-size: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1em;
+}
+.agree-protocol{
+    font-size: 12px;
+    color: #ccc;
+}
+.loginLink{
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+    padding: 1em;
+}
+@media screen and (max-width: 600px){
+    .loginCard{
+        width: 100%;
+    }
+}
+</style>
+<ion-view view-title="注册" hide-nav-bar="{{hideNavBar}}">
+    <ion-content>
+        <div common-header></div>
+        <div class="card loginCard">
+            <div class="form-head">欢迎来到易道云</div>
+            <div class="row">
+                <div class="buttons col-33">
+                    <button class="button button-outline button-stable btn">Github</button>
+                </div>
+                <div class="buttons col-33">
+                    <button class="button btn button-balanced">Wechat</button>
+                </div>
+                <div class="buttons col-33">
+                    <button class="button btn button-outline button-stable">QQ</button>
+                </div>
+            </div>
+            <form ng-submit="login()">
+              <div class="list">
+                <label class="item item-input">
+                  <span class="input-label">用户名</span>
+                  <input type="text" ng-model="loginData.username">
+                </label>
+                <label class="item item-input">
+                  <span class="input-label">密码</span>
+                  <input type="password" ng-model="loginData.password">
+                </label>
+                <label class="item">
+                  <button class="button button-block button-positive" type="submit">登录</button>
+                </label>
+              </div>
+            </form>
+            <div class="row loginLink">
+                还没有账号，去<a ui-sref="app.register">注册</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

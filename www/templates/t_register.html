@@ -1,0 +1,77 @@
+<style>
+.registerCard{
+    width: 500px;
+    height: 600px;
+    margin:  3em auto;
+}
+.form-head{
+    padding: 30px;
+    text-align: center;
+    font-size: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1em;
+}
+.agree-protocol{
+    font-size: 12px;
+    color: #ccc;
+}
+.loginLink{
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+    padding: 1em;
+}
+@media screen and (max-width: 600px){
+    .registerCard{
+        width: 100%;
+    }
+}
+</style>
+<ion-view view-title="注册" hide-nav-bar="{{hideNavBar}}">
+    <ion-content>
+        <div common-header></div>
+        <div class="card registerCard">
+            <div class="form-head">欢迎来到易道云</div>
+            <div class="row">
+                <div class="buttons col-33">
+                    <button class="button button-outline button-stable btn">Github</button>
+                </div>
+                <div class="buttons col-33">
+                    <button class="button btn button-balanced">Wechat</button>
+                </div>
+                <div class="buttons col-33">
+                    <button class="button btn button-outline button-stable">QQ</button>
+                </div>
+            </div>
+            <form ng-submit="register()">
+                <div class="list">
+                    <label class="item item-input">
+                        <span class="input-label">用户名</span>
+                        <input type="text" ng-model="registerData.username">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">邮箱</span>
+                        <input type="text" ng-model="registerData.email">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">手机</span>
+                        <input type="text" ng-model="registerData.phone">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">密码</span>
+                        <input type="password" ng-model="registerData.password">
+                    </label>
+
+                    <label class="item agree-protocol"><input class="agree-box" type="checkbox">我已阅读并同意<a href="">易道云使用协议</a></label>
+
+                    <label class="item">
+                        <button class="button button-block button-positive" type="submit">注册</button>
+                    </label>
+                </div>
+            </form>
+            <div class="row loginLink">
+                已有账号，请<a ui-sref="app.login">登录</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

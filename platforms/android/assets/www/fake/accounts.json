@@ -1,0 +1,51 @@
+{
+    "code": 200,
+    "message": "success",
+    "data":{
+        "name": "梅萨德斯奔驰",
+        "pages": 20,
+        "list":[
+        {
+            "id": "1",
+            "parent_user": "1",
+            "username": "admin",
+            "name": "李四",
+            "sex": "女",
+            "mobile": "2147483647",
+            "email": "123456@qq.cpom",
+            "id_number": "210654789754323456"
+        },
+        {
+            "id": "1",
+            "parent_user": "1",
+            "username": "admin",
+            "name": "李四",
+            "sex": "女",
+            "mobile": "2147483647",
+            "email": "123456@qq.cpom",
+            "id_number": "210654789754323456"
+        },
+        {
+            "id": "1",
+            "parent_user": "1",
+            "username": "admin",
+            "name": "李四",
+            "sex": "女",
+            "mobile": "2147483647",
+            "email": "123456@qq.cpom",
+            "id_number": "210654789754323456"
+        },
+        {
+            "id": "1",
+            "parent_user": "1",
+            "username": "admin",
+            "name": "李四",
+            "sex": "女",
+            "mobile": "2147483647",
+            "email": "123456@qq.cpom",
+            "id_number": "210654789754323456"
+        }
+    ]
+        },
+    "uuid": ""
+}

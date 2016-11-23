@@ -1,0 +1,271 @@
+<style>
+    .lean-canvas-title{
+        font-size: 20px;
+        border: 0;
+        position: absolute;
+        top: -40px;
+        left: 0;
+    }
+    .leanWrapper{
+        width: 100%;
+        height: 100%;
+        max-width: 1200px;
+        position: relative;
+        margin:50px auto 50px;
+    }
+    #closeBtn{
+        width: 4em;
+        height: 30px;
+        border: 0;
+        border-radius: 4px;
+        color: #fff;
+        background: blue;
+        position: absolute;
+        top: -40px;
+        right: 10px;
+    }
+    .lean-canvas{
+        width: 20%;
+        height: 400px;
+        border: 1px solid #ccc;
+        margin: 0 0 0 0;
+        position: absolute;
+        border-collapse: collapse;
+    }
+    .lean-canvas:hover{
+        /*background: #ecf0fa;*/
+    }
+    .lean-canvas0{
+        top: 0;
+        left: 0;
+    }
+    .lean-canvas1{
+        top: 0;
+        left: 20%;
+        height: 200px;
+    }
+    .lean-canvas2{
+        top: 200px;
+        left: 20%;
+        height: 200px;
+    }
+    .lean-canvas3{
+        top: 0;
+        left: 40%;
+    }
+    .lean-canvas4{
+        top: 0;
+        left: 60%;
+        height: 200px;
+    }
+    .lean-canvas5{
+        top: 200px;
+        left: 60%;
+        height: 200px;
+    }
+    .lean-canvas6{
+        top: 0;
+        left: 80%;
+    }
+    .lean-canvas7{
+        width: 50%;
+        height: 150px;
+        top: 400px;
+        left: 0;
+    }
+    .lean-canvas8{
+        width: 50%;
+        height: 150px;
+        top: 400px;
+        left: 50%;
+    }
+    .lc-title{
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        padding: 0 10px 0 10px;
+        box-sizing: border-box;
+        font-weight: 700;
+        font-size: 16px;
+    }
+    .lc-block{
+        width: 100%;
+        height: 65%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .lc-block:hover{
+        /*background: #ecf0fa;*/
+    }
+    .lc-hint{
+        padding: 0 10px;
+        box-sizing: border-box;
+        color: #ccc;
+    }
+    .lc-block pre{
+        background: #fff;
+        height: 80%;
+        font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+    }
+    .lc-block pre:hover{
+        /*background: #ecf0fa;*/
+    }
+    .lean-canvas textarea{
+        width: 100%;
+        height: 55%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .lean-canvas button{
+        margin: 5px;
+        border-radius: 4px;
+        border: 0;
+        background: #9bd89b;
+        color: #fff;
+    }
+
+    .lc-comment{
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+        font-size: 12px;
+        color: #594a4a;
+    }
+    .comment-area{
+        width: 358px;
+        min-height: 270px;
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        margin-left: -179px;
+        background: #f0f0f0;
+        z-index: 999;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .comment-box{
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        padding: 3em 1em 1em;
+        box-sizing: border-box;
+    }
+    .comment-textarea{
+        width: 90%;
+        display: block;
+        margin: 0 auto 2em;
+        height: 8em;
+        border: 1px solid #000;
+        padding: 1em;
+        box-sizing: border-box;
+        line-height: 1.5em;
+    }
+    .comment-button{
+        height: 1.5em;
+        line-height: 1.5em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 0 10px;
+        background: #fff;
+        margin: 0  5% 1em;
+    }
+    .shield{
+        width: 100%;
+        height: 800px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 10;
+    }
+    .comment-list{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .comment-user{
+        color: #666;
+    }
+    .cancelBtn{
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: -8px;
+        right: -8px;
+    }
+    @media screen and (max-width: 600px){
+        .lean-canvas2{
+            height: 80px;
+        }
+    }
+</style>
+<ion-view hide-nav-bar="true">
+    <ion-content>
+        <div class="leanWrapper">
+            <button ng-if="isMobile" ng-click="closeCanvas()" id="closeBtn">关闭</button>
+            <input placeholder="输入你的画布名称..." ng-model="leanCanvasTitle" class="lean-canvas-title">
+            <div class="lean-canvas lean-canvas{{$index}}" ng-repeat="x in inputContent track by $index" ng-mouseover="showComment($index)" ng-mouseleave="leaveComment($index)">
+                <div class="lc-title">{{x.title}}</div>
+                <div ng-if="x.hint" ng-click="toEdit($index)" class="lc-hint">{{x.placeholder}}</div>
+                <div ng-if="x.readable" ng-click="toEdit($index)" class="lc-block block{{$index}}"><pre>{{x.value}}</pre></div>
+                <textarea id="textarea{{$index}}" ng-if="!x.readable" ng-model="x.value"></textarea>
+                <button ng-if="!x.readable" ng-click="toSave($index)">保存</button>
+                <div ng-if="x.commentable" ng-click="toComment($index)" class="lc-comment lc-comment{{$index}}">发表评论</div>
+            </div>
+            <div class="comment-area" ng-if="setting.commentBox">
+                <img ng-click="closeCommentBox()" src="img/icon-cancel.png" class="cancelBtn">
+                <div class="comment-box">
+                    <textarea ng-model="setting.currentComment" class="comment-textarea"></textarea>
+                    <button ng-click="comment()" class="comment-button">添加评论</button>
+                    <div ng-repeat='list in inputContent[setting.currentId].comment' class="comment-list">
+                        <span class="comment-user">{{list.name}}</span>：<span class="comment-content">{{list.content}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>
+<script>
+var conW = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+var conH = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)){
+    if(conW < conH){
+        horizontalScreen('body')
+    }else{
+
+    }
+
+}
+
+
+/*强制横屏*/
+function horizontalScreen(className){
+// transform 强制横屏
+// transform: rotate(90deg); width: 667px; height: 375px;transform-origin:28% 50%;
+//var iosTopHe = 0;//若有其他样式判断，写于此
+
+$(className).css({
+    "transform":"rotate(90deg) translate("+((conH-conW)/2)+"px,"+((conH-conW)/2)+"px)",
+    "width":conH+"px",
+    "height":conW+"px",
+    //"margin-top":iosTopHe+"px",
+    // "border-left":iosTopHe+"px solid #000",
+    "transform-origin":"center center",
+    "-webkit-transform-origin": "center center"
+});
+}
+function verticalScreen(className){
+    $(className).css({
+        "transform":"rotate(-90deg) translate("+((conH-conW)/2)+"px,"+((conH-conW)/2)+"px)",
+        "width":conW+"px",
+        "height":conH+"px",
+        //"margin-top":iosTopHe+"px",
+        // "border-left":iosTopHe+"px solid #000",
+        "transform-origin":"center center",
+        "-webkit-transform-origin": "center center"
+    });
+}
+
+
+</script>

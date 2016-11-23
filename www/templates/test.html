@@ -1,12 +1,191 @@
 <style>
+.lean-canvas-wrapper{
+    width: 1200px;
+    height: 640px;
+    margin: 50px auto;
+    border: 1px solid #000;
+    position: relative;
+}
+.lean-canvas{
+    width: 20%;
+    border: 1px solid #000;
+}
+.lean-canvas-problem{
+    height: 418px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.lean-canvas-solution{
+    height: 209px;
+    position: absolute;
+    top: 0;
+    left: 20%;
+}
+.lean-canvas-metrics{
+    height: 209px;
+    position: absolute;
+    top: 209px;
+    left: 20%;
+}
+.lean-canvas-position{
+    height: 418px;
+    position: absolute;
+    top: 0;
+    left: 40%;
+}
+.lean-canvas-advantage{
+    height: 209px;
+    position: absolute;
+    top: 0;
+    left: 60%;
+}
+.lean-canvas-channel{
+    height: 209px;
+    position: absolute;
+    top: 209px;
+    left: 60%;
+}
+.lean-canvas-customer{
+    height: 418px;
+    position: absolute;
+    top: 0;
+    left: 80%;
+}
+
+.lean-canvas-cost{
+    height: 222px;
+    width: 50%;
+    position: absolute;
+    top: 418px;
+    left: 0;
+}
+.lean-canvas-revenue{
+    height: 222px;
+    width: 50%;
+    position: absolute;
+    top: 418px;
+    left: 50%;
+}
+.sarking{
+    width: 100%;
+    height: 100%;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    position: relative;
+}
+.lean-canvas-title{
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.lean-canvas-btns{
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.lean-canvas-textarea{
+    width: 100%;
+    height: 100%;
+    padding: 40px 10px;
+    box-sizing: border-box;
+    overflow:hidden;
+    resize:none;
+    overflow-y: scroll;
+}
+
+.lean-canvas-btn-save{
+    position: absolute;
+    top: -50px;
+    right: 0;
+}
+.lean-canvas-btn-comment{
+    width: 50px;
+    height: 30px;
+    font-size: 0.5em;
+    line-height: 30px;
+    margin: 5px 0;
+    border: 0;
+    border-radius: 4px;
+    background: #9bd89b;
+    color: #fff;
+}
+
+.lean-canvas-scheme{
+    width: 400px;
+    height: 60px;
+    position: absolute;
+    top: -61px;
+    left: 0;
+}
+.lean-canvas-scheme input{
+    height: 60px;
+    line-height: 60px;
+}
+
+.lean-canvas-toolbox{
+    width: 40px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    right: -20px;
+    z-index: 0;
+}
+.icon{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    transition: all .6s;
+}
+.icon-download{
+    left: 0;
+    top: 0;
+}
+.icon-download:hover{
+    left: 20px;
+    top: 0;
+}
+.icon-dustbin{
+    left: 0;
+    top: 40px;
+}
+.icon-dustbin:hover{
+    left: 20px;
+    top: 40px;
+}
+
 </style>
 
-<ion-view>
+<ion-view hide-nav-bar="{{hideNavBar}}">
     <ion-content>
-        <div class="">
-            <table>
+        <!-- directive lean-canvas-box -->
 
-            </table>
+        <div class="lean-canvas-wrapper">
+            <div class="lean-canvas-scheme">
+                {{hideNavBar}}
+                <input type="text" placeholder="请输入画布主题...">
+            </div>
+            <div class="lean-canvas-toolbox">
+                <img class="icon icon-download" title="下载" src="../img/icon-download.png">
+                <img class="icon icon-dustbin" title="删除" src="../img/icon-dustbin.png">
+            </div>
+            <div class="lean-canvas lean-canvas-{{data[$index].key}}" ng-repeat="x in data track by $index">
+                <div lean-canvas-box title="{{data[$index].title}}" placeholder="{{data[$index].placeholder}}" content="data[$index].value"></div>
+            </div>
+        </div>
+        <div class="">
+            <div comment-box>
+
+            </div>
         </div>
     </ion-content>
 </ion-view>
