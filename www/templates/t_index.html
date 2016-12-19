@@ -1,4 +1,4 @@
-<ion-view view-title="易道云" hide-nav-bar="{{hideNavBar}}">
+<ion-view view-title="易道云" hide-nav-bar="{{globals.hideNavBar}}">
   <style>
       .cont{
           margin-bottom: 100px;
@@ -24,7 +24,7 @@
       }
       .subTitle{
           font-size: 1.3em;
-          line-height: 1em;
+          line-height: 1.3em;
           color: #fff;
           margin-top: 1em;
       }
@@ -46,7 +46,7 @@
           padding: 0 15px;
       }
       .cont2-image{
-          width: 33.3%;
+          width: 31.3%;
           padding: 15px;
           float: left;
       }
@@ -60,9 +60,19 @@
       }
       .cont5 img{
           width: 50%;
+          vertical-align: top;
           display: inline-block;
       }
+      .cont5-principle{
+          width: 48%;
+          display: inline-block;
+          padding: 3em 2em;
+      }
 
+      .cont5-principle ul li{
+          font-size: 1.2em;
+          line-height: 1.4em;
+      }
       .startBtn{
           display: block;
           width: 150px;
@@ -75,7 +85,7 @@
           display: block;
           width: 400px;
           height: 56px;
-          margin: 1em 0;
+          margin: 1em auto;
       }
 
 
@@ -83,28 +93,43 @@
           .cont2-image{
               width: 50%;
           }
-
+          .card{
+              margin: 0;
+          }
+          .inner-footer-wrapper{
+              display: none;
+          }
       }
       @media screen and (max-width: 600px){
+          .cont1{
+              /*background: url("img/blue-bak.svg") fixed no-repeat top;*/
+          }
+          .slogan{
+              font-size: 2em;
+          }
           .cont2-image, .cont3-image, .cont4-image, .cont5 img{
               width: 100%;
           }
           .bottomStartBtn{
-              width: 100%;
+              width: 92%;
               margin: 1em auto;
+          }
+          .cont5-principle{
+              width: 100%;
+              padding: 3em 2em 0;
           }
       }
 
   </style>
   <ion-content>
-      <div common-header user="{{user}}"></div>
+      <div common-header></div>
       <div class="cont cont1">
           <div class="cont1-inner-wrapper">
               <h1 class="slogan">创业，来易道，我们一起</h1>
               <p class="subTitle">简单有力的描述你的商业计划，把重点放在最重要的事情上</p>
               <p class="subTitle">寻找专家和顾问帮你优化你的方案，甚至帮你寻找投资帮你寻找最适合你的合伙人</p>
               <div class="buttons padding">
-                  <button ng-click="login()" type="button" class="button button-positive startBtn">加入易道云</button>
+                  <button ui-sref="app.register" type="button" class="button button-positive startBtn">加入易道云</button>
               </div>
           </div>
       </div>
@@ -114,28 +139,30 @@
               <p class="cont2-title">帮你用有用的工具描述你的点子、需求</p>
               <p class="cont2-p">提供开发你的产品所需的各种工具：协同、沟通、计划、分享、演示、测试、集成</p>
               <p class="cont2-p">提供运行和运营产品的最有环境：云、各种服务和各种基于精益分析运营工具</p>
-              <div class="cont2-image">
+              <div class="cont2-image card">
                   <img class="width-full" src="img/slide1.jpg">
               </div>
-              <div class="cont2-image">
+              <div class="cont2-image card">
                   <img class="width-full" src="img/slide2.jpg">
               </div>
-              <div class="cont2-image">
+              <div class="cont2-image card">
                   <img class="width-full" src="img/slide1.jpg">
               </div>
               <div class="clear"></div>
           </div>
       </div>
-      <div class="cont cont3">
-          <div class="cont3-inner-wrapper">
-              <p class="cont2-p">从今天起关注在最重要的事情上<br>了解市场、了解客户<br>减少浪费<br></p>
-              <div class="cont3-image">
-                  <img class="width-full" src="img/feature1.jpg">
+      <div class="full-width bg-eee">
+          <div class="cont cont3">
+              <div class="cont3-inner-wrapper">
+                  <p class="cont2-p">从今天起关注在最重要的事情上<br>了解市场、了解客户<br>减少浪费<br></p>
+                  <div class="cont3-image">
+                      <img class="width-full" src="img/feature1.jpg">
+                  </div>
+                  <div class="cont3-image">
+                      <img class="width-full" src="img/feature2.jpg">
+                  </div>
+                  <div class="clear"></div>
               </div>
-              <div class="cont3-image">
-                  <img class="width-full" src="img/feature2.jpg">
-              </div>
-              <div class="clear"></div>
           </div>
       </div>
       <div class="cont cont4">
@@ -148,10 +175,21 @@
           </div>
           <div class="clear"></div>
       </div>
-
-      <div class="cont cont5">
-          <img src="img/key.jpg">
-          <button class="button button-positive bottomStartBtn">感觉不错，马上申请试用</button>
+      <div class="full-width bg-eee">
+          <div class="cont cont5">
+              <img src="img/bg-computer.png">
+              <div class="cont5-principle">
+                  <h2>精益创业的关键原则是什么？</h2>
+                  <ul>
+                      <li>减少浪费，低成本（无收入不扩增）</li>
+                      <li>一种开发／测量／学习的文化</li>
+                      <li>快速假设，快速学习／失败，快速调整</li>
+                      <li>敏捷技术开发</li>
+                      <li>耐心有调理的开展各阶段工作</li>
+                  </ul>
+              </div>
+          </div>
+          <button ui-sref="app.register" class="button button-positive bottomStartBtn">感觉不错，马上申请试用</button>
       </div>
     </div>
     <div common-footer></div>

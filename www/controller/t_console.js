@@ -12,8 +12,7 @@
                 }
             })
         });
-    moduleC.controller('consoleCtrl', function($scope, hideNavBar){
-        $scope.hideNavBar = hideNavBar;
-        $scope.testData = 'vincent';
+    moduleC.controller('consoleCtrl', function($scope, $ionicNavBarDelegate, $rootScope){
+        $ionicNavBarDelegate.showBar(!$rootScope.globals.hideNavBar);
     })
 })();

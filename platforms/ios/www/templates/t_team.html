@@ -1,7 +1,9 @@
-<ion-view view-title="团队管理" hideNavBar="{{hideNavBar}}">
+<ion-view view-title="团队管理" hideNavBar="{{globals.hideNavBar}}">
   <ion-content>
+    <div common-header></div>
     <div class="list">
       <div class="item item-button-right">
+        {{globals.hideNavBar}}
         创始团队（目前任职）
         <button class="button button-positive">
           <i class="icon ion-plus"></i>

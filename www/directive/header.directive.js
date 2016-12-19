@@ -1,16 +1,20 @@
 (function(){
     'use strict';
 
-    moduleC.directive('commonHeader', commonHeader);
+    moduleC.directive('commonHeader', ['$rootScope', commonHeader]);
     // commonHeader.$inject = ['$rootScope'];
     function commonHeader(){
         return {
             restrict: 'EA',
             replace: true,
-            scope: {
-                user: '@user'
+            scope: true,
+            templateUrl: function(tElement, tAttrs){
+                if(tAttrs.layout == 'vertical'){
+                    return 'html/vertical-header.html';
+                }else{
+                    return 'html/header.html';
+                }
             },
-            templateUrl: 'html/header.html',
             link: function(scope, element, attrs){
                 function hideNavBar(){
                     var hideNavBar = false;
@@ -26,7 +30,7 @@
                     hideNavBar = (IsPC() ? true : false)
                     return hideNavBar;
                 }
-                scope.showHeader = (hideNavBar ? true: false);
+                scope.showHeader = (hideNavBar() ? true : false);
             }
         };
     }

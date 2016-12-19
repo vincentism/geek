@@ -1,26 +1,5 @@
-
-<ion-view>
+<ion-view hide-nav-bar="{{globals.hideNavBar}}">
     <ion-content>
-        <div class="wrapper">
-            <!-- <label>their url field:</label>
-            <input type="text" ng-model="theirUrl">
-            <div my-directive
-                some-attr = "theirUrl"
-                my-link-text = "whatever"></div> -->
-
-            <div ng-controller="scopeController">
-                outside: {{myProperty}}
-                <div my-directive ng-init="myProperty = 'cool'">
-                    inside: {{myProperty}}
-                </div>
-            </div>
-        </div>
-
-
+      <drag-and-drop-example></drag-and-drop-example>
     </ion-content>
 </ion-view>
-<style>
-    .wrapper{
-        margin-top: 50px
-    }
-</style>

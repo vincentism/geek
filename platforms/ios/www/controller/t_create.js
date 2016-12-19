@@ -12,8 +12,8 @@
             }
         })
     });
-    moduleC.controller('createController', function($scope, hideNavBar){
-        $scope.hideNavBar = hideNavBar;
+    moduleC.controller('createController', function($scope, $ionicNavBarDelegate, $rootScope){
+        $ionicNavBarDelegate.showBar(!$rootScope.globals.hideNavBar);
     })
 })();
 

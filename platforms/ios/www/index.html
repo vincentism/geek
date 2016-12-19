@@ -3,51 +3,60 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
-
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <title>易道云</title>
 
     <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
-
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
 
     <!-- tools -->
-    <script src="tools/jquery-1.11.1.min.js"></script>
+    <!-- <script src="tools/jquery-1.11.1.min.js"></script>
     <script src="tools/jquery-ui.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="tools/jquery.tmpl.min.js"></script>
+    <script src="tools/jquery.tmpl.min.js"></script> -->
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
+    <script src="lib/angular-local-storage.js"></script>
+    <script src="lib/angular-legacy-sortable.js"></script>
+    <script src="lib/angular-drag-and-drop-lists.js"></script>
 
     <!-- app controller js -->
     <script src="controller/app.js"></script>
+
+
+
 
     <!-- app'service js -->
     <script src="service/header.service.js"></script>
     <script src="service/authentication.service.js"></script>
 
+    <!-- app'directive js -->
+    <script src="directive/header.directive.js"></script>
+    <script src="directive/footer.directive.js"></script>
+
     <!-- app'controller js -->
     <script src="controller/t_account.js"></script>
+    <script src="controller/t_register.js"></script>
+    <script src="controller/t_login.js"></script>
     <script src="controller/t_index.js"></script>
     <script src="controller/t_console.js"></script>
     <script src="controller/t_team.js"></script>
-    <script src="controller/t_lean.js"></script>
+    <script src="controller/t_leancanvas.js"></script>
+    <script src="controller/t_panel.js"></script>
     <script src="controller/leanTest.js"></script>
     <script src="controller/t_create.js"></script>
     <script src="controller/t_mindMap.js"></script>
-    <script src="controller/test.js"></script>
 
     <script src="controller/vincent_practice.js"></script>
   </head>
 
-  <body ng-app="starter" class="platform-ios platform-cordova platform-webview">
-    <div ng-include="'templates/header.html'"></div>
+  <body ng-app="starter" animation="slide-left-right-ios7" class="platform-ios platform-cordova platform-webview">
     <ion-nav-view></ion-nav-view>
   </body>
 </html>

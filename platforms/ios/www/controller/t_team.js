@@ -13,10 +13,7 @@
       })
     });
 
-    moduleC.controller('teamCtrl', function($scope, hideNavBar, $ionicNavBarDelegate){
-        $scope.hideNavBar = hideNavBar;
-        console.log($scope.hideNavBar);
-        // $ionicNavBarDelegate.showBar(!$scope.hideNavBar);
-
+    moduleC.controller('teamCtrl', function($scope, $rootScope, $ionicNavBarDelegate){
+        $ionicNavBarDelegate.showBar(!$rootScope.globals.hideNavBar);
     })
 }());

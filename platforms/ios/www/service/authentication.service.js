@@ -3,40 +3,40 @@
 
     moduleS.factory('AuthenticationService', AuthenticationService);
 
-    AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', '$timeout', 'UserService'];
-    function AuthenticationService($http, $cookieStore, $rootScope, $timeout, UserService) {
+    AuthenticationService.$inject = ['$http', '$rootScope', '$timeout'];
+    function AuthenticationService($http, $rootScope, $timeout) {
         var service = {};
 
         service.Login = Login;
+        service.register = Register;
         service.SetCredentials = SetCredentials;
         service.ClearCredentials = ClearCredentials;
 
         return service;
 
-        function Login(username, password, callback) {
-
-            /* Dummy authentication for testing, uses $timeout to simulate api call
-             ----------------------------------------------*/
-            $timeout(function () {
-                var response;
-                UserService.GetByUsername(username)
-                    .then(function (user) {
-                        if (user !== null && user.password === password) {
-                            response = { success: true };
-                        } else {
-                            response = { success: false, message: 'Username or password is incorrect' };
-                        }
-                        callback(response);
-                    });
-            }, 1000);
+        function Login(userData, callback) {
+            if(userData.username === 'retesting' && userData.password === '123'){
+                callback();
+            }else{
+                alert('用户名或密码错误');
+            }
 
             /* Use this for real authentication
              ----------------------------------------------*/
-            //$http.post('/api/authenticate', { username: username, password: password })
+            // $http.post('/api/authenticate', userData)
             //    .success(function (response) {
-            //        callback(response);
-            //    });
+            //         callback(response);
+            //    }).error(function(response){
+            //         console.log('login failed, for testing direct to index.page')
+            //         callback(response);
+            //    })
+        }
 
+        function Register(userData){
+            $http.post('/api/authenticate', userData)
+               .success(function (response) {
+                   callback(response);
+               });
         }
 
         function SetCredentials(username, password) {
@@ -50,12 +50,12 @@
             };
 
             $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
-            $cookieStore.put('globals', $rootScope.globals);
+            // $cookieStore.put('globals', $rootScope.globals);
         }
 
         function ClearCredentials() {
             $rootScope.globals = {};
-            $cookieStore.remove('globals');
+            // $cookieStore.remove('globals');
             $http.defaults.headers.common.Authorization = 'Basic';
         }
     }

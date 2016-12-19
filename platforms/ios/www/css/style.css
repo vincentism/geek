@@ -1,12 +1,15 @@
-/* Empty. Add your own CSS if you like */
+body{
+    background: #f8f8f8;
+    font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Helvetica,Arial,sans-serif;
+}
 .center{
-  text-align: center;
+    text-align: center;
 }
 .inline-block{
-  display: inline-block;
+    display: inline-block;
 }
 .width-full{
-  width: 100%;
+    width: 100%;
 }
 .full{
     width: 100%;
@@ -30,29 +33,30 @@
     background: #387ef5;
     padding: 10px;
 }
+.bg-eee{
+    background: #eee;
+    padding: 40px 0;
+}
 .project{
-    width: 100%;
-    height: 150px;
+    width: 267px;
     border: 0;
     border-radius: 4px;
     overflow: hidden;
     float: left;
-    margin-bottom: 1em;
+    margin: 1em;
     padding: 0
 }
 .project img{
     width: 100%;
-    height: 100%;
 }
-@media screen and (min-width: 800px){
-  .project{
-      width: 267px;
-      height: 134px;
-      float: left;
-  }
-  .project img{
-      margin: 1em;
-  }
+@media screen and (max-width: 600px){
+    .project{
+        width: 96%;
+        margin: 1em auto;
+    }
+    .form-title hr{
+        border: #fff;
+    }
 }
 .inviteBox{
     padding-top: 1em;
@@ -62,4 +66,63 @@
 .row{
     margin-left: 0;
     margin-right: 0;
+}
+
+.header-box{
+    width: 100%;
+    height: 60px;
+    padding: 1em 2em;
+    z-index: 9;
+}
+.header-inner-box{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header-title-eng-version{
+    font-size: 25px;
+    line-height: 30px;
+}
+.header-title{
+    font-size: 25px;
+    line-height: 30px;
+}
+.header-li{
+    font-size: 18px;
+    line-height: 40px;
+    float: left;
+    vertical-align: bottom;
+    margin: 0 1em 0 0;
+}
+.header-account{
+    font-size: 16px;
+}
+.investHouse{
+  margin-left: 2em;
+}
+
+.footer-wrapper{
+    width: 100%;
+    padding: 1em 0;
+    background: #34495e;
+    color: #fff;
+    border-top: 1px solid #eee;
+}
+.inner-footer-wrapper{
+    max-width: 1200px;
+    margin: 2em auto 3em;
+}
+.footer-items{
+    margin-left: 125px;
+    width: 150px;
+    text-align: left;
+}
+.footer-intro{
+    text-align: center;
+    line-height: 1.5em;
+}
+.footer-intro-item{
+    color: #fff;
+}
+.footer-intro-item:hover{
+    color: #fff;
 }

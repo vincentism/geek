@@ -11,12 +11,7 @@ moduleC.config(function($stateProvider, $urlRouterProvider) {
   })
 });
 
-
-moduleC.controller('indexCtrl', function($scope, hideNavBar, $ionicNavBarDelegate){
-  $scope.hideNavBar = hideNavBar;
-  console.log(hideNavBar);
-  $ionicNavBarDelegate.showBar(!$scope.hideNavBar);
-
+moduleC.controller('indexCtrl', function($scope){
   // the config of carousel of index
   $scope.options = {
       loop: true,

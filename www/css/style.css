@@ -1,14 +1,15 @@
 body{
     background: #f8f8f8;
+    font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Helvetica,Arial,sans-serif;
 }
 .center{
-  text-align: center;
+    text-align: center;
 }
 .inline-block{
-  display: inline-block;
+    display: inline-block;
 }
 .width-full{
-  width: 100%;
+    width: 100%;
 }
 .full{
     width: 100%;
@@ -23,6 +24,9 @@ body{
 .clear{
     clear: both;
 }
+li{
+    list-style: none;
+}
 .btn{
   width: 96%;
   margin: 0 2%;
@@ -32,29 +36,30 @@ body{
     background: #387ef5;
     padding: 10px;
 }
+.bg-eee{
+    background: #eee;
+    padding: 40px 0;
+}
 .project{
-    width: 100%;
-    height: 150px;
+    width: 267px;
     border: 0;
     border-radius: 4px;
     overflow: hidden;
     float: left;
-    margin-bottom: 1em;
+    margin: 1em;
     padding: 0
 }
 .project img{
     width: 100%;
-    height: 100%;
 }
-@media screen and (min-width: 800px){
-  .project{
-      width: 267px;
-      height: 134px;
-      float: left;
-  }
-  .project img{
-      margin: 1em;
-  }
+@media screen and (max-width: 600px){
+    .project{
+        width: 96%;
+        margin: 1em auto;
+    }
+    .form-title hr{
+        border: #fff;
+    }
 }
 .inviteBox{
     padding-top: 1em;
@@ -94,13 +99,40 @@ body{
 .header-account{
     font-size: 16px;
 }
+.vertical-header{
+    width: 180px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #373d41;
+    z-index: 10;
+}
+.vertical-header li{
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 16px;
+    color: #fff;
+}
+.vertical-header li:hover{
+    background: #22282e;
+}
+.vertical-header-toggle{
+    text-align: center;
+    background: #4A5064;
+}
+.vertical-header-title{
+    font-size: 18px;
+}
+
 .investHouse{
   margin-left: 2em;
 }
-
 .footer-wrapper{
     width: 100%;
-    height: 365px;
+    padding: 1em 0;
     background: #34495e;
     color: #fff;
     border-top: 1px solid #eee;

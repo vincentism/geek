@@ -9,9 +9,9 @@
 
         <ul class="right inline-block">
             <li class="header-li" ui-sref="app.console">工作台</li>
-            <li class="header-li header-account">{{user}}</li>
-            <li class="header-li header-account" ui-sref="app.register">注册</li>
-            <li class="header-li header-account" ui-sref="app.login">登陆</li>
+            <li class="header-li header-account" ng-if="user">{{user}}</li>
+            <li class="header-li header-account" ng-if="!user" ui-sref="app.register">注册</li>
+            <li class="header-li header-account" ng-if="!user" ui-sref="app.login">登陆</li>
         </ul>
     </div>
 </header>

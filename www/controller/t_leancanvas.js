@@ -1,16 +1,16 @@
 (function(){
     'use strict';
     moduleC.config(function($stateProvider, $urlRouterProvider) {
-      $stateProvider
-      .state('app.test', {
-        url: '/test',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/test.html',
-            controller: 'testCtrl'
-          }
-        }
-      })
+        $stateProvider
+        .state('app.leanCanvas', {
+            url: '/leancanvas',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/t_leancanvas.html',
+                    controller: 'leanController'
+                }
+            }
+        });
     });
 
     moduleC.directive('leanCanvasBox', function(){
@@ -24,7 +24,7 @@
             },
             template: '<div class="sarking" ng-mouseover="showCommentBtn()" ng-mouseleave="hideCommentBtn()">'
                 + '<div class="lean-canvas-title">{{title}}</div>'
-                + '<textarea ng-model="content" class="lean-canvas-textarea" placeholder="{{placeholder}}"></textarea>'
+                + '<textarea ng-model="content" ng-blur="toLocationStart()" class="lean-canvas-textarea" placeholder="{{placeholder}}"></textarea>'
                 + '<div class="lean-canvas-btns" id="lean-comment-problem" ng-show="showBox">'
                     + '<button class="lean-canvas-btn lean-canvas-btn-comment" ng-click="toComment()">评论</button>'
                 + '</div>'
@@ -39,28 +39,19 @@
                 };
                 scope.toComment = function() {
                     alert(scope.content);
+                };
+                scope.toLocationStart = function(){
+                    // scope.content = scope.content;
                 }
+
             }
 
         }
     });
 
-    moduleC.directive('commentBox', function(){
-        return {
-            restrict: 'EA',
-            replace: true,
-            scope: {
-                title: '@commentTitle'
-            },
-            // template: '<div class=""></div>',
-            link: function (scope, element, attrs) {
 
-            }
-        }
-    });
-
-    moduleC.controller('testCtrl', function($scope, $ionicNavBarDelegate){
-        $ionicNavBarDelegate.showBar(false);
+    moduleC.controller('leanController', function($scope, $ionicNavBarDelegate, $rootScope){
+        $ionicNavBarDelegate.showBar(!$rootScope.globals.hideNavBar);
 
         $scope.data = [
           {key : 'problem', title: '问题', placeholder: '列出你的客户所遇到的最主要的问题', value : ''},
@@ -75,4 +66,4 @@
         ]
     })
 
-}());
+})();

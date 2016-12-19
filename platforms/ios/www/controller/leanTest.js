@@ -11,14 +11,6 @@ moduleC.config(function($stateProvider, $urlRouterProvider) {
   });
 });
 
-
-// 输入框出现自动获取焦点 未完成
-// moduleI.directive('setFocus', function(){
-//       return function(scope, element){
-//          element[0].focus();
-//       };
-// });
-
 moduleC.controller('leanTestCtrl', function($scope, $ionicNavBarDelegate, $ionicPlatform){
     $scope.isMobile = ionic.Platform.isIOS() || ionic.Platform.isAndroid();
     if($scope.isMobile){
@@ -47,11 +39,6 @@ moduleC.controller('leanTestCtrl', function($scope, $ionicNavBarDelegate, $ionic
             setTimeout(function(){angular.element('#textarea'+index).focus();},500);
         }
     }
-    // $ionicPlatform.ready(function () {
-    //     if($scope.isMobile){
-    //
-    //     }
-    // })
 
     // 关闭精益画布，页面旋转为竖直方向
     $scope.closeCanvas = function(){
